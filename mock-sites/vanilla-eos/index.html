@@ -246,7 +246,7 @@
         const account = scatter.identity.accounts.find(x => x.blockchain === 'eos');
         const opts = { authorization:[`${account.name}@${account.authority}`] };
         eos.contract('eosio.token', {requiredFields:{}}).then(contract => {
-            contract.transfer(account.name, 'eosio', '1.0000 EOS', '', opts).then(trx => {
+            contract.transfer(account.name, 'new.game', '0.0001 EOS', '', opts).then(trx => {
                 console.log('trx', trx);
             }).catch(err => {
                 console.error(err);
